@@ -1,5 +1,1 @@
-# golang
-
-## reference
-
-- [url](./url)
+# learn golang
