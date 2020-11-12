@@ -1,1 +1,1 @@
-# learn golang
+# Go API
