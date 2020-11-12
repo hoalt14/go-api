@@ -1,6 +1,67 @@
 package main
 
-// ---------- commandLineArgs
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
+	"time"
+)
+
+// ===================== get
+
+// import (
+// 	"fmt"
+// 	"io/ioutil"
+// 	"net/http"
+// 	"os"
+// 	"time"
+// )
+
+// func main() {
+// 	resp, err := http.Get("https://www.google.com")
+// 	if err != nil {
+// 		fmt.Println(err)
+// 		os.Exit(1)
+// 	}
+// 	defer resp.Body.Close()
+
+// 	b, err := ioutil.ReadAll(resp.Body)
+// 	if err != nil {
+// 		fmt.Println(err)
+// 		os.Exit(1)
+// 	}
+
+// 	log.Println(string(b))
+// }
+
+// func main() {
+// 	urls := []string{
+// 		"https://www.google.com",
+// 		"https://www.yahoo.com",
+// 		"https://www.bing.com",
+// 		"https://www.ecosia.com",
+// 	}
+
+// 	for i := 0; i < len(urls); i++ {
+// 		resp, err := http.Get(urls[i])
+// 		if err != nil {
+// 			fmt.Println(err)
+// 			os.Exit(1)
+// 		}
+// 		defer resp.Body.Close()
+
+// 		b, err := ioutil.ReadAll(resp.Body)
+// 		if err != nil {
+// 			fmt.Println(err)
+// 			os.Exit(1)
+// 		}
+
+// 		fmt.Println(len(b))
+// 	}
+// }
+
+// ===================== commandLineArgs
 
 // import (
 // 	"fmt"
@@ -18,7 +79,7 @@ package main
 // 	}
 // }
 
-// ---------- fetchURLConcurrent
+// ===================== fetchURLConcurrent
 
 // import (
 // 	"fmt"
@@ -67,15 +128,7 @@ package main
 // 	fmt.Printf("--- Nhận được %dB từ %q (%q)\n", len(body), url, response.Header.Get("Content-Type"))
 // }
 
-// ---------- fetchURLSequential
-
-import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
-	"os"
-	"time"
-)
+// ===================== fetchURLSequential
 
 func main() {
 	if len(os.Args) < 2 {
