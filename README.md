@@ -1,4 +1,4 @@
-# learn_golang
+# golang
 
 ## reference
 
