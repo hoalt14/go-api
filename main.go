@@ -8,7 +8,7 @@ import (
 
 	"github.com/go-chi/chi"
 
-	"github.com/hoalt14/learn_golang/handler"
+	"github.com/hoalt14/go-api/handler"
 )
 
 var (
