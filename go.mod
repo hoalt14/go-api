@@ -1,4 +1,4 @@
-module github.com/hoalt14/learn_golang
+module github.com/hoalt14/go-api
 
 go 1.15
 
