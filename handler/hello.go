@@ -7,6 +7,12 @@ import (
 	"rsc.io/quote/v3"
 )
 
+func GetRoot() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("First Test"))
+	}
+}
+
 func GetHello() http.HandlerFunc {
 	type reponse struct {
 		Message string `json:"message"`

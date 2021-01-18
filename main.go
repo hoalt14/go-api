@@ -13,12 +13,13 @@ import (
 
 var (
 	host = ""
-	port = 3000
+	port = 8080
 )
 
 func main() {
 	r := chi.NewRouter()
 	r.Get("/hello", handler.GetHello())
+	r.Get("/", handler.GetRoot())
 
 	addr := fmt.Sprintf("%s:%d", host, port)
 	svr := http.Server{
