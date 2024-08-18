@@ -1,8 +1,39 @@
 # Go API
 
-## Create Router
+## Local
+
+### Update Module
 
 ```shell
-- docker build -t test .
-- docker run -d --name test -p 8080:8080 test
+go mod tidy
 ```
+
+### Build Execute File
+
+```shell
+go build -o test
+```
+
+### Run test
+
+```shell
+./test
+```
+
+## Docker
+
+### Build Image
+
+```shell
+docker build -t go-api .
+```
+
+### Run Container
+
+```shell
+docker run -d --name test -p 8080:8080 go-api
+```
+
+## Access
+
+[http://localhost:8080/](http://localhost:8080/)
