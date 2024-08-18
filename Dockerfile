@@ -1,6 +1,4 @@
-FROM golang:1.15.6-alpine
-
-WORKDIR /app/go-app
+FROM golang:1.23.0-alpine
 
 COPY go.mod .
 COPY go.sum .

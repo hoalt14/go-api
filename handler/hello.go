@@ -9,7 +9,7 @@ import (
 
 func GetRoot() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("First Test"))
+		w.Write([]byte("Test Something"))
 	}
 }
 
