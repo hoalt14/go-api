@@ -18,8 +18,9 @@ var (
 
 func main() {
 	r := chi.NewRouter()
-	r.Get("/hello", handler.GetHello())
 	r.Get("/", handler.GetRoot())
+	r.Get("/hello", handler.GetHello())
+	r.Get("/fib", handler.GetFibonacci())
 
 	addr := fmt.Sprintf("%s:%d", host, port)
 	svr := http.Server{
