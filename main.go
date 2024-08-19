@@ -18,8 +18,10 @@ var (
 
 func main() {
 	r := chi.NewRouter()
+	r.Get("/", GetRoot())
+	r.Get("/health", GetHealth())
 	r.Get("/hello", handler.GetHello())
-	r.Get("/", handler.GetRoot())
+	r.Get("/fib", handler.GetFibonacci())
 
 	addr := fmt.Sprintf("%s:%d", host, port)
 	svr := http.Server{
@@ -33,5 +35,17 @@ func main() {
 
 	if err := svr.ListenAndServe(); err != nil {
 		log.Println(err)
+	}
+}
+
+func GetRoot() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Go test something"))
+	}
+}
+
+func GetHealth() http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("It's OK"))
 	}
 }

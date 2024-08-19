@@ -37,3 +37,13 @@ docker run -d --name test -p 8080:8080 go-api
 ## Access
 
 [http://localhost:8080/](http://localhost:8080/)
+
+### Testing
+
+```shell
+curl localhost:8080
+curl localhost:8080/hello
+
+# High Load CPU
+curl 'localhost:8080/fib?n=40'
+```
