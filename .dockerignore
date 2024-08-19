@@ -1,0 +1,29 @@
+# Exclude the Go workspace
+pkg/
+bin/
+src/
+
+# Exclude the build output
+*.out
+*.exe
+*.dll
+*.so
+
+# Exclude version control directories
+.git
+.gitignore
+
+# Exclude dependencies and caches
+vendor/
+node_modules/
+**/__pycache__/
+
+# Exclude editor and IDE configuration files
+*.swp
+*~ 
+.idea/
+.vscode/
+
+# Exclude Docker-related files that don't need to be copied
+Dockerfile
+docker-compose.yml

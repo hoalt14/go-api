@@ -29,26 +29,23 @@ func GetFibonacci() http.HandlerFunc {
 		}
 
 		var wg sync.WaitGroup
-		results := make(chan int, 10)
+		result := 0
+		mu := sync.Mutex{}
 
 		for i := 0; i < 10; i++ {
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
-				results <- fibonacci(n)
+				fib := fibonacci(n)
+				mu.Lock()
+				result = fib
+				mu.Unlock()
 			}()
 		}
 
-		go func() {
-			wg.Wait()
-			close(results)
-		}()
+		wg.Wait()
 
-		total := 0
-		for result := range results {
-			total += result
-		}
-
-		fmt.Fprintf(w, "Fibonacci(%d) = %d", n, total)
+		w.Header().Set("Content-Type", "text/plain")
+		fmt.Fprintf(w, "Fibonacci(%d) = %d", n, result)
 	}
 }
