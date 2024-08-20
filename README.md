@@ -43,6 +43,7 @@ docker run -d --name test -p 8080:8080 go-api
 ```shell
 curl localhost:8080
 curl localhost:8080/hello
+curl localhost:8080/health
 
 # High Load CPU
 curl 'localhost:8080/fib?n=40'
