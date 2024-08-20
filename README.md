@@ -1,48 +1,18 @@
 # Go API
 
+## Quickstart
+
 ```shell
 docker pull hoalt14/go-api:v1
 ```
 
-## Local
-
-### Update Module
-
 ```shell
-go mod tidy
+docker run -d --name test -p 8080:8080 hoalt14/go-api:v1
 ```
 
-### Build Execute File
-
-```shell
-go build -o test
-```
-
-### Run test
-
-```shell
-./test
-```
-
-## Docker
-
-### Build Image
-
-```shell
-docker build -t go-api .
-```
-
-### Run Container
-
-```shell
-docker run -d --name test -p 8080:8080 go-api
-```
-
-## Access
+## Testing
 
 [http://localhost:8080/](http://localhost:8080/)
-
-### Testing
 
 ```shell
 curl localhost:8080
