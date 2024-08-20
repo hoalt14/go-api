@@ -32,6 +32,7 @@ func GetFibonacci() http.HandlerFunc {
 		result := 0
 		mu := sync.Mutex{}
 
+		// 10 goroutines
 		for i := 0; i < 10; i++ {
 			wg.Add(1)
 			go func() {

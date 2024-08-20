@@ -12,6 +12,7 @@ src/
 # Exclude version control directories
 .git
 .gitignore
+.dockerignore
 
 # Exclude dependencies and caches
 vendor/
@@ -27,3 +28,4 @@ node_modules/
 # Exclude Docker-related files that don't need to be copied
 Dockerfile
 docker-compose.yml
+README.md
