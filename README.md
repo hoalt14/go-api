@@ -1,5 +1,9 @@
 # Go API
 
+```shell
+docker pull hoalt14/go-api:v1
+```
+
 ## Local
 
 ### Update Module
